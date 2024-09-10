@@ -1,0 +1,43 @@
+# Dropbox-like Application
+
+## Overview
+This is a Dropbox-equivalent file storage service implemented in Java Spring Boot with MySQL for metadata storage and in-memory storage for file storage. The service provides REST APIs for uploading, retrieving, updating, and deleting files.
+
+## Features
+- Upload files                  - (URL - POST http://localhost:8080/files/upload)
+- Retrieve files by file ID     - (URL - GET http://localhost:8080/files/{fileId})
+- Update files                  - (URL - PUT http://localhost:8080/files/{fileId})
+- Delete files                  - (URL - DELETE http://localhost:8080/files/{fileId})
+- List all uploaded files       - (URL - GET http://localhost:8080/files)
+
+## Technologies Used
+- Java Spring Boot
+- MySQL for file metadata storage
+- In-memory file storage
+
+## Prerequisites
+- JDK 17
+- Maven
+- MySQL
+- Postman (for testing APIs)
+- IDE like Intellij Idea (for running the application)
+
+## Installation and Setup
+
+1. Clone the repository from GitHub
+2. Install the prerequisites in your local system
+3. Update the credentials of MySQL in application.properties file (i.e. url, username, password)
+4. Make sure to create a database dropbox_db (or any name) in MySQL
+5. Run the application. It should be available on port 8080 for testing.
+6. Use Postman for testing the APIs and use the URls provided above.
+7. Open Postman and click New > HTTP Request.
+   Set the HTTP method
+   In the URL field, enter URL
+   **In the Body tab, select form-data for uploading and updating the files.**
+   Add the following key-value pairs:
+    key: file
+    type: Select File from the dropdown on the right.
+    value: Choose the file you want to upload from your local machine.
+   Click Send.
+
+** For uploading and updating maximum file size is set to 10MB and maximum request size is set to 20MB **
